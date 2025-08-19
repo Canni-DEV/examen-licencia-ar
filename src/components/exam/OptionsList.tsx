@@ -26,8 +26,10 @@ export default function OptionsList({ options, selected, onSelect }: Props) {
               onKeyDown={handleKey(idx)}
               onClick={() => onSelect(idx)}
               className={
-                'w-full text-left border rounded-xl px-4 py-3 transition-colors ' +
-                (isSel ? 'border-brand-primary bg-blue-50' : 'hover:bg-gray-50')
+                'w-full text-left border rounded-base px-4 py-3 transition-colors ' +
+                (isSel
+                  ? 'border-primary bg-primary/10'
+                  : 'border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700')
               }
             >
               {op}
