@@ -1,0 +1,46 @@
+[
+  {
+    "titulo": "Cómo mapear",
+    "html": "<p>En OpenStreetMap las señales se mapean con la clave <code>traffic_sign=*</code> sobre un <em>nodo</em> (poste) o, cuando aplique, asociado a la vía. Para indicar sentido de aplicación puede usarse <code>traffic_sign:direction=forward|backward</code>. Se recomienda complementar con: <code>source=*</code> (fuente), <code>ref=*</code> (código oficial si existe), <code>height</code>/<code>min_height</code> cuando corresponda, y <code>support=*</code> (p.ej. <code>support=pole</code>).</p><p>Referencia completa y convenciones: <a href=\"https://wiki.openstreetmap.org/wiki/ES:Se%C3%B1ales_viales_en_Argentina\" target=\"_blank\" rel=\"noopener\">OSM: Señales viales en Argentina</a> y <a href=\"https://wiki.openstreetmap.org/wiki/ES:Key:traffic_sign\" target=\"_blank\" rel=\"noopener\">ES:Key:traffic_sign</a>.</p>"
+  },
+  {
+    "titulo": "Señales reglamentarias o prescriptivas",
+    "html": "<p>Transmiten <strong>órdenes de carácter obligatorio</strong> (prohibiciones, restricciones, prioridades) y sus respectivos <em>fin de prescripción</em>. Deben obedecerse en el lugar y alcance indicado por su emplazamiento.</p>"
+  },
+  {
+    "titulo": "Señales de prohibición (prescriptivas)",
+    "html": "<p>Prohíben maniobras o conductas (p. ej. contramano, giros prohibidos, adelantamiento, estacionamiento/detención, etc.).</p><div class=\"grid grid-cols-2 md:grid-cols-4 gap-12 text-center\"><figure><img alt=\"R-1 (ejemplo)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20R-1%20(1975).svg?width=160\"><figcaption>R-1 (ejemplo Contramano)</figcaption></figure><figure><img alt=\"R-2 (ejemplo)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-2.svg?width=160\"><figcaption>R-2 (Prohibición específica)</figcaption></figure><figure><img alt=\"R-8 (no girar)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-8.svg?width=160\"><figcaption>R-8 (Giro prohibido)</figcaption></figure><figure><img alt=\"R-25 (control)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-25.svg?width=160\"><figcaption>R-25 (Puesto de control)</figcaption></figure><figure><img alt=\"R-27 (No detenerse/No estacionar)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-27.svg?width=160\"><figcaption>R-27 (Detención/Estacionamiento)</figcaption></figure></div><p class=\"mt-3\">Listado extendido en el wiki (tabla “Señales de prohibición”).</p>"
+  },
+  {
+    "titulo": "Señales de restricción (prescriptivas)",
+    "html": "<p>Imponen límites cuantitativos (velocidad, peso, dimensiones, etc.).</p><div class=\"grid grid-cols-2 md:grid-cols-4 gap-12 text-center\"><figure><img alt=\"R-15 (Vel máx 30)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-15%20(30).svg?width=160\"><figcaption>R-15 (Velocidad máxima)</figcaption></figure><figure><img alt=\"R-16 (Vel mínima)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-16.svg?width=160\"><figcaption>R-16 (Velocidad mínima)</figcaption></figure><figure><img alt=\"R-22 (Altura limitada)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-22.svg?width=160\"><figcaption>R-22 (Altura limitada)</figcaption></figure><figure><img alt=\"R-24 (Ancho limitado)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-24.svg?width=160\"><figcaption>R-24 (Ancho limitado)</figcaption></figure></div>"
+  },
+  {
+    "titulo": "Señales de prioridad (prescriptivas)",
+    "html": "<p>Otorgan, ceden o ordenan la prioridad de paso (p. ej. Ceda el paso, PARE, Rotonda, etc.).</p><div class=\"grid grid-cols-2 md:grid-cols-4 gap-12 text-center\"><figure><img alt=\"Ceda el paso\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20Ceda%20el%20paso.svg?width=160\"><figcaption>Ceda el paso</figcaption></figure><figure><img alt=\"PARE\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20Stop%20(1975).svg?width=160\"><figcaption>PARE</figcaption></figure><figure><img alt=\"Rotonda\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20P-33.svg?width=160\"><figcaption>Rotonda (advertencia de rotonda)</figcaption></figure></div>"
+  },
+  {
+    "titulo": "Señales de fin de prescripción",
+    "html": "<p>Indican la finalización del alcance de una prohibición o restricción previa.</p><div class=\"grid grid-cols-2 md:grid-cols-4 gap-12 text-center\"><figure><img alt=\"Fin velocidad máxima\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-18.svg?width=160\"><figcaption>Fin de velocidad máxima</figcaption></figure><figure><img alt=\"Fin prohibición de adelantamiento (ej.)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20R-14.svg?width=160\"><figcaption>Fin de prescripción (ej.)</figcaption></figure></div>"
+  },
+  {
+    "titulo": "Señales preventivas",
+    "html": "<p>Advierten riesgos o características de la vía que requieren atención y adecuación de la conducción (curvas, pendientes, cruces, superficie resbaladiza, vientos, etc.).</p>"
+  },
+  {
+    "titulo": "Señales sobre características de la vía (preventivas)",
+    "html": "<div class=\"grid grid-cols-2 md:grid-cols-4 gap-12 text-center\"><figure><img alt=\"P-1 Curva\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20P-1.svg?width=160\"><figcaption>P-1 Curva</figcaption></figure><figure><img alt=\"P-2 Curva y contracurva\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20P-2B.svg?width=160\"><figcaption>P-2 Curva y contracurva</figcaption></figure><figure><img alt=\"P-6 Camino sinuoso\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20P-6.svg?width=160\"><figcaption>P-6 Camino sinuoso</figcaption></figure><figure><img alt=\"P-21 Pendiente\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20P-21.svg?width=160\"><figcaption>P-21 Pendiente</figcaption></figure><figure><img alt=\"P-32 Semáforo\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20P-32.svg?width=160\"><figcaption>P-32 Semáforo</figcaption></figure><figure><img alt=\"P-25 Cruce de peatones\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20MSV%202017%20road%20sign%20P-25(a).svg?width=160\"><figcaption>P-25 Cruce de peatones</figcaption></figure></div>"
+  },
+  {
+    "titulo": "Señales informativas",
+    "html": "<p>Brindan información de orientación, destino, servicios, características de la vía y nomenclatura vial/urbana.</p>"
+  },
+  {
+    "titulo": "Nomenclatura vial y urbana (informativas)",
+    "html": "<div class=\"grid grid-cols-2 md:grid-cols-4 gap-12 text-center\"><figure><img alt=\"Ruta Nacional (I-2)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20I-2.svg?width=160\"><figcaption>I-2 Ruta Nacional</figcaption></figure><figure><img alt=\"Información urbana (estación FFCC)\" src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20road%20sign%20Terminal%20de%20Ferrocarriles.svg?width=200\"><figcaption>Terminal/Estación FFCC</figcaption></figure></div><p>Para carteles de destinos, distancias, nombres de calles y numeración se emplean paneles y tipografías normalizadas según el Manual de Señalamiento Vertical.</p>"
+  },
+  {
+    "titulo": "Señales sobre características de la vía (informativas)",
+    "html": "<p>Incluyen paneles de orientación, bifurcaciones, empalmes, inicio/fin de autopista, sentidos de circulación, y servicios (estación de servicio, hospital, policía, etc.).</p><p>Consulta el repertorio completo y sus variantes en el wiki de OSM (sección “Señales informativas”).</p>"
+  }
+]

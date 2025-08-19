@@ -1,0 +1,591 @@
+[
+  {
+    "id": "t1",
+    "texto": "¿Cuál es la velocidad máxima típica en zona urbana (salvo señalización distinta)?",
+    "opciones": ["30 km/h", "40 km/h", "50 km/h", "60 km/h"],
+    "correcta": 2,
+    "explicacion": "En la mayoría de jurisdicciones argentinas, el máximo típico urbano es 50 km/h (ver normativa local)."
+  },
+  {
+    "id": "t2",
+    "texto": "¿Qué documentación es obligatoria llevar al conducir?",
+    "opciones": [
+      "DNI, Licencia vigente, Cédula del vehículo, Seguro",
+      "Solo Licencia vigente",
+      "DNI y comprobante de pago de patente",
+      "Tarjeta SUBE"
+    ],
+    "correcta": 0,
+    "explicacion": "Documentación obligatoria estándar."
+  },
+  {
+    "id": "t3",
+    "texto": "Llevar matafuegos en un automóvil, ¿es exigible por ley?",
+    "opciones": [
+      "No, no es exigible por ley pero debemos llevarlo por seguridad",
+      "No, no es exigible porque ante un incendio del vehículo debemos llamar a los bomberos",
+      "Sí, es exigible por ley"
+    ],
+    "correcta": 2,
+    "explicacion": "La normativa nacional y provincial exige matafuego homologado instalado en automóviles."
+  },
+  {
+    "id": "t4",
+    "texto": "Una denuncia policial de extravío de la licencia de conducir, ¿lo habilita a conducir?",
+    "opciones": ["Sí", "Depende cuánto tiempo transcurrió del extravío", "No"],
+    "correcta": 2,
+    "explicacion": "La denuncia no reemplaza la licencia vigente; conducir sin licencia es infracción."
+  },
+  {
+    "id": "t5",
+    "texto": "Con líneas paralelas (continua y discontinua), si usted circula junto a la línea continua…",
+    "opciones": [
+      "No puede realizar el adelantamiento",
+      "Puede adelantar solo en este supuesto",
+      "Puede adelantar siempre"
+    ],
+    "correcta": 0,
+    "explicacion": "La línea continua junto a su mano prohíbe el cruce para adelantar."
+  },
+  {
+    "id": "t6",
+    "texto": "La señalización horizontal de doble línea continua indica:",
+    "opciones": [
+      "Que está permitido traspasarla",
+      "Que está prohibido traspasarla",
+      "Que está permitido circular sobre ella"
+    ],
+    "correcta": 1,
+    "explicacion": "La doble línea continua prohíbe cruzar o circular sobre ella."
+  },
+  {
+    "id": "t7",
+    "texto": "Un motovehículo de menos de 60 cc:",
+    "opciones": [
+      "Puede llevar pasajeros",
+      "No se puede llevar pasajeros",
+      "Se puede llevar a un niño hasta 40 kg"
+    ],
+    "correcta": 1,
+    "explicacion": "El ciclomotor (≤ 50–60 cc según jurisdicción) no está habilitado para transportar acompañante."
+  },
+  {
+    "id": "t8",
+    "texto": "Según la Ley Nacional 24.449, la licencia clase C autoriza a conducir vehículos de la clase A (motocicletas)?",
+    "opciones": ["Sí", "No", "Solo motocicletas de menos de 150 cc"],
+    "correcta": 1,
+    "explicacion": "Las clases no son intercambiables; para motos se requiere clase A."
+  },
+  {
+    "id": "t9",
+    "texto": "¿Qué es el punto ciego?",
+    "opciones": [
+      "Áreas de visión no cubiertas por los espejos retrovisores",
+      "Áreas de visión cubiertas por los espejos retrovisores",
+      "Áreas de visión lateral y frontal"
+    ],
+    "correcta": 0,
+    "explicacion": "Zonas fuera del campo de los espejos que requieren giro de cabeza para verificar."
+  },
+  {
+    "id": "t10",
+    "texto": "La posibilidad de que en un ciclomotor viajen dos personas está supeditada a:",
+    "opciones": [
+      "Que la licencia del conductor tenga al menos un año de antigüedad",
+      "No pueden viajar dos personas en un ciclomotor",
+      "El diseño del asiento, pedalines y relación potencia-peso"
+    ],
+    "correcta": 1,
+    "explicacion": "Para ciclomotores no se admite pasajero; para motos mayores rige el diseño y equipamiento."
+  },
+  {
+    "id": "t11",
+    "texto": "¿Puede circular con una moto en contramano?",
+    "opciones": [
+      "Solo si el espacio es corto",
+      "Sí, pero a velocidad reducida",
+      "No, está prohibido"
+    ],
+    "correcta": 2,
+    "explicacion": "Circular en sentido contrario está prohibido salvo indicación expresa de la autoridad."
+  },
+  {
+    "id": "t12",
+    "texto": "Para poder circular con un ciclomotor en la vía pública, ¿es necesario tener licencia habilitante?",
+    "opciones": ["Sí, es obligatorio", "No, si inició el trámite", "No requiere licencia"],
+    "correcta": 0,
+    "explicacion": "Todo conductor debe poseer licencia habilitante para la categoría correspondiente."
+  },
+  {
+    "id": "t13",
+    "texto": "¿Cuál es la velocidad máxima para una motocicleta en avenidas (salvo señalización distinta)?",
+    "opciones": ["40 km/h", "60 km/h", "70 km/h"],
+    "correcta": 1,
+    "explicacion": "En zona urbana, el máximo típico en avenidas para motos es 60 km/h."
+  },
+  {
+    "id": "t14",
+    "texto": "Una Licencia de Conducir vencida…",
+    "opciones": [
+      "Sirve para circular en zonas urbanas mientras se tramita la renovación",
+      "Si no posee multas, sirve por un año más",
+      "No autoriza a conducir a su titular"
+    ],
+    "correcta": 2,
+    "explicacion": "Con licencia vencida no se está habilitado para conducir."
+  },
+  {
+    "id": "t15",
+    "texto": "¿Cuándo se produce el “efecto túnel” (reducción del campo visual)?",
+    "opciones": ["Al aumentar la velocidad", "Al disminuir la velocidad", "Al ingresar a zona de poca luz"],
+    "correcta": 0,
+    "explicacion": "El incremento de la velocidad reduce el campo visual periférico."
+  },
+  {
+    "id": "t16",
+    "texto": "Si una bicicleta circula por la derecha, ¿tiene prioridad de paso en un cruce de calles?",
+    "opciones": [
+      "No, las bicicletas no tienen prioridad por la derecha",
+      "Sí, tiene prioridad",
+      "Solo en avenidas"
+    ],
+    "correcta": 1,
+    "explicacion": "La regla de prioridad de la derecha aplica a todos los vehículos, incluidas bicicletas."
+  },
+  {
+    "id": "t17",
+    "texto": "¿De qué color debe ser la luz de retroceso?",
+    "opciones": ["Blanca", "Roja", "Roja adelante y blanca atrás"],
+    "correcta": 0,
+    "explicacion": "La luz de marcha atrás es de color blanco para indicar maniobra hacia atrás."
+  },
+  {
+    "id": "t18",
+    "texto": "¿Es necesario circular con las dos manos sobre el volante?",
+    "opciones": [
+      "No, siempre que se sujete firmemente",
+      "Sí, excepto al accionar un comando manual",
+      "Solo al realizar un giro"
+    ],
+    "correcta": 1,
+    "explicacion": "Se debe mantener el control con ambas manos salvo para operar comandos."
+  },
+  {
+    "id": "t19",
+    "texto": "En zona ventosa, usted debe…",
+    "opciones": ["Disminuir la velocidad", "Mantener la velocidad", "Disminuir y acelerar constantemente"],
+    "correcta": 0,
+    "explicacion": "Reducir velocidad y sostener trayectorias suaves mejora el control ante ráfagas."
+  },
+  {
+    "id": "t20",
+    "texto": "¿Qué indica la luz roja de un semáforo?",
+    "opciones": [
+      "Indica alto: detenerse antes de la línea de detención o senda peatonal",
+      "Detenerse solo si no alcanzará a cruzar",
+      "Cruce riesgoso; circular con precaución"
+    ],
+    "correcta": 0,
+    "explicacion": "La luz roja ordena detención previa a la línea o senda."
+  },
+  {
+    "id": "t21",
+    "texto": "¿A qué se denomina calzada?",
+    "opciones": [
+      "Zona de la vía destinada a la circulación de vehículos",
+      "Zona de la vía destinada solo a motos",
+      "Zona destinada a los peatones"
+    ],
+    "correcta": 0,
+    "explicacion": "La calzada es la parte de la vía por donde circulan los vehículos."
+  },
+  {
+    "id": "t22",
+    "texto": "¿Cuál es la velocidad máxima para motos en calles (salvo señalización distinta)?",
+    "opciones": ["40 km/h", "50 km/h", "60 km/h"],
+    "correcta": 0,
+    "explicacion": "En calles urbanas el máximo típico para motos es 40 km/h."
+  },
+  {
+    "id": "t23",
+    "texto": "En una curva, si aprieta fuertemente el freno delantero, puede suceder que…",
+    "opciones": [
+      "Nada, el efecto giroscópico estabiliza la moto",
+      "La rueda delantera se bloquee y produzca una caída",
+      "La rueda trasera se bloquee por la fuerza cinética"
+    ],
+    "correcta": 1,
+    "explicacion": "El bloqueo de la rueda delantera en curva suele provocar pérdida de adherencia y caída."
+  },
+  {
+    "id": "t24",
+    "texto": "Si circula con su moto por una vía urbana de doble sentido y desea estacionar, ¿en qué lado debe hacerlo?",
+    "opciones": ["En el lado izquierdo", "En cualquiera de los dos lados", "En el lado derecho"],
+    "correcta": 2,
+    "explicacion": "En vías de doble sentido se estaciona sobre la mano derecha, salvo señalización."
+  },
+  {
+    "id": "t25",
+    "texto": "¿Es obligatorio que el motovehículo posea guardabarros sobre todas sus ruedas?",
+    "opciones": ["No, solo atrás", "Sí, es obligatorio", "Solo recomendable"],
+    "correcta": 1,
+    "explicacion": "La reglamentación exige guardabarros que cubran adecuadamente las ruedas."
+  },
+  {
+    "id": "t26",
+    "texto": "¿Por qué lado de la calzada debe circular un motovehículo?",
+    "opciones": ["Por la derecha", "Por la izquierda", "Por la izquierda si va a la máxima"],
+    "correcta": 0,
+    "explicacion": "La circulación normal es por el carril/sector derecho, salvo maniobra justificada."
+  },
+  {
+    "id": "t27",
+    "texto": "¿Qué edad se debe tener para circular con motocicletas de más de 150 cc si no se posee licencia previa?",
+    "opciones": ["Ser mayor de 21 años", "Ser mayor de 16 años", "Ser mayor de 18 años"],
+    "correcta": 2,
+    "explicacion": "Para categorías de mayor cilindrada se exige ser mayor de edad y la clase A correspondiente."
+  },
+  {
+    "id": "t28",
+    "texto": "¿Cuántos kilos de carga puede llevar un ciclomotor?",
+    "opciones": ["40 kg", "100 kg", "80 kg"],
+    "correcta": 0,
+    "explicacion": "Los ciclomotores admiten cargas muy limitadas; un valor de referencia es 40 kg."
+  },
+  {
+    "id": "t_alc_def",
+    "texto": "¿Qué se entiende por alcoholemia?",
+    "opciones": [
+      "Es un dispositivo electrónico que se usa para medir el alcohol en sangre.",
+      "La alcoholemia es la concentración de alcohol en sangre, es la cantidad de alcohol con relación a la cantidad de sangre en el cuerpo.",
+      "Es el estado de ebriedad de una persona."
+    ],
+    "correcta": 1,
+    "explicacion": "Define la concentración de alcohol en sangre (g/L)."
+  },
+  {
+    "id": "t_overtunnel",
+    "texto": "Al atravesar túneles y puentes en una ruta, ¿está permitido adelantarse a otro vehículo?",
+    "opciones": ["Sí.", "No.", "Según los días y horas."],
+    "correcta": 1,
+    "explicacion": "En túneles y puentes el adelantamiento está prohibido por seguridad salvo señalización que lo permita."
+  },
+  {
+    "id": "t_alc_effects",
+    "texto": "¿Qué efectos produce el alcohol en la conducción de vehículos?",
+    "opciones": [
+      "No produce efectos en la conducción.",
+      "Interfiere en atención dividida, trayectoria, visión, tiempos de reacción, habilidades psicomotoras y procesamiento de información.",
+      "Aumenta la prudencia y disminuye conductas impulsivas."
+    ],
+    "correcta": 1,
+    "explicacion": "El alcohol deprime el SNC y deteriora capacidades críticas para conducir."
+  },
+  {
+    "id": "t_patente_luz",
+    "texto": "¿La placa patente trasera debe estar iluminada?",
+    "opciones": ["No es obligatorio.", "Sólo en vehículos de servicio público.", "Sí, es obligatorio."],
+    "correcta": 2,
+    "explicacion": "La iluminación de la placa trasera es obligatoria para su lectura nocturna."
+  },
+  {
+    "id": "t_prioridad_orden",
+    "texto": "En la vía pública, ¿cuál es el orden de prioridad ante conflicto?",
+    "opciones": [
+      "Señales de tránsito > autoridad > normas.",
+      "Autoridad de control > señales de tránsito > normas.",
+      "Normas > autoridad > señales."
+    ],
+    "correcta": 1,
+    "explicacion": "Orden de prevalencia: autoridad > señales > normas generales."
+  },
+  {
+    "id": "t_moto350_pax",
+    "texto": "¿Cuántos acompañantes puede llevar una moto de 350 cc?",
+    "opciones": ["Uno.", "Dos.", "Ninguno."],
+    "correcta": 0,
+    "explicacion": "Las motocicletas están habilitadas para un acompañante si el diseño lo permite."
+  },
+  {
+    "id": "t_motos_paralelo",
+    "texto": "¿Pueden dos motos circular en paralelo?",
+    "opciones": [
+      "Sí, si ambos conductores pueden observarse.",
+      "Sólo cuando la vía tenga más de 11 metros de ancho.",
+      "No, deben circular uno detrás de otro."
+    ],
+    "correcta": 2,
+    "explicacion": "Se debe circular por carril sin invadir el contiguo; no en paralelo."
+  },
+  {
+    "id": "t_pax_edad_min",
+    "texto": "¿Qué edad mínima debe tener el acompañante en una moto?",
+    "opciones": ["8 años.", "10 años.", "9 años."],
+    "correcta": 1,
+    "explicacion": "Menores de 10 años no deben viajar en moto."
+  },
+  {
+    "id": "t_vel_oscil",
+    "texto": "A medida que aumenta la velocidad en moto…",
+    "opciones": [
+      "Mejora la maniobrabilidad.",
+      "Se incrementa la posibilidad de sufrir oscilaciones.",
+      "Se retrasa la fatiga."
+    ],
+    "correcta": 1,
+    "explicacion": "A más velocidad, mayor inestabilidad y oscilaciones aerodinámicas."
+  },
+  {
+    "id": "t_curva_cond",
+    "texto": "Al atravesar una curva, usted debe:",
+    "opciones": [
+      "Reducir la velocidad antes de la curva.",
+      "Mantener aceleración constante y no utilizar el embrague en el giro.",
+      "Ambas acciones son correctas."
+    ],
+    "correcta": 2,
+    "explicacion": "Se disminuye antes de la curva y se mantiene tracción estable en el giro."
+  },
+  {
+    "id": "t_casco_abrochar",
+    "texto": "¿El casco debe estar bien abrochado?",
+    "opciones": [
+      "Es indistinto, lo importante es llevarlo.",
+      "Sí, es obligatorio tenerlo bien abrochado.",
+      "No es obligatorio."
+    ],
+    "correcta": 1,
+    "explicacion": "Un casco sin abrochar no protege adecuadamente."
+  },
+  {
+    "id": "t_ciclo_autopista",
+    "texto": "¿Puede un ciclomotor circular por autopistas o semiautopistas?",
+    "opciones": ["Sí, si está en condiciones reglamentarias.", "No, está prohibido.", "Sólo por la derecha."],
+    "correcta": 1,
+    "explicacion": "Los ciclomotores no pueden circular por autopistas/semiautopistas."
+  },
+  {
+    "id": "t_escape_libre",
+    "texto": "Un motovehículo con escape libre:",
+    "opciones": [
+      "Se lo intimará a corregirlo.",
+      "Se remitirá al corralón municipal.",
+      "Se le labrará el acta de comprobación correspondiente."
+    ],
+    "correcta": 2,
+    "explicacion": "El escape antirreglamentario implica infracción y acta; pueden existir medidas accesorias."
+  },
+  {
+    "id": "t_sin_patente",
+    "texto": "¿Está permitido circular sin placas patentes?",
+    "opciones": ["30 días.", "45 días.", "No está permitido circular sin placas patentes."],
+    "correcta": 2,
+    "explicacion": "Circular sin identificación está prohibido salvo excepciones con placa provisoria."
+  },
+  {
+    "id": "t_alc_010_retencion",
+    "texto": "Control de alcoholemia: 0,10 g/L en automóvil particular, documentación y vehículo en regla. ¿Puede la autoridad retener el vehículo?",
+    "opciones": [
+      "No, está dentro del límite de tolerancia para automóviles.",
+      "Sí, es facultad de control.",
+      "Depende de la bebida consumida."
+    ],
+    "correcta": 0,
+    "explicacion": "Para autos, el límite suele ser 0,5 g/L; 0,10 g/L no configura alcoholemia positiva (ver norma local)."
+  },
+  {
+    "id": "t_subida_prioridad",
+    "texto": "En una subida estrecha, ¿quién tiene prioridad de paso?",
+    "opciones": ["Quien asciende.", "Quien desciende.", "No existe prioridad definida."],
+    "correcta": 0,
+    "explicacion": "El que sube tiene prioridad; el que baja debe ceder si no entran simultáneamente."
+  },
+  {
+    "id": "t_paso_nivel",
+    "texto": "¿A qué se denomina Paso a Nivel?",
+    "opciones": [
+      "Al cruce de una vía de circulación con el ferrocarril.",
+      "Al cruce de dos vías de circulación.",
+      "A cualquier cruce con o sin ferrocarril."
+    ],
+    "correcta": 0,
+    "explicacion": "Es el cruce a nivel entre calzada y vías férreas."
+  },
+  {
+    "id": "t_ciclo_neumaticos",
+    "texto": "Un ciclomotor, ¿puede utilizar neumáticos reconstruidos?",
+    "opciones": ["Sólo en la rueda trasera.", "No, está prohibido.", "Sí, puede utilizarlos."],
+    "correcta": 1,
+    "explicacion": "En motovehículos no se admiten neumáticos recauchutados/reconstruidos."
+  },
+  {
+    "id": "t_beneficios_moto",
+    "texto": "¿Cuáles son los beneficios que ofrece una moto?",
+    "opciones": [
+      "Es económica, ahorra energía y favorece la fluidez.",
+      "Ahorra energía, permite ir más rápido y es económica.",
+      "Otorga confort, ahorra energía y mayor fluidez."
+    ],
+    "correcta": 0,
+    "explicacion": "Ventajas típicas: menor costo/consumo y mayor agilidad."
+  },
+  {
+    "id": "t_doc_moto",
+    "texto": "¿Cuál es la documentación exigible para conducir un motovehículo?",
+    "opciones": [
+      "Licencia clase A, cédula, patente al día, seguro RC, DNI y RTO.",
+      "Licencia A, autorización del titular y DNI.",
+      "Licencia C, cédula, recibo de patente y boleto de compra-venta."
+    ],
+    "correcta": 0,
+    "explicacion": "Se exige licencia acorde (A), cédula, seguro, identificación y revisión técnica vigente."
+  },
+  {
+    "id": "t_factores_riesgo",
+    "texto": "La fatiga, el alcohol o el mal tiempo, ¿influyen en los accidentes?",
+    "opciones": [
+      "No, los factores de riesgo son otros.",
+      "Sí, aumentan la probabilidad y gravedad de los siniestros.",
+      "No, un accidente es impredecible."
+    ],
+    "correcta": 1,
+    "explicacion": "Son factores de riesgo reconocidos que deterioran el desempeño."
+  },
+  {
+    "id": "t_anteojos_moto",
+    "texto": "¿Es obligatorio para el conductor de una moto usar anteojos si la moto no tiene parabrisas?",
+    "opciones": ["Sí.", "No.", "Sólo si circula a más de 50 km/h."],
+    "correcta": 0,
+    "explicacion": "Se requiere protección ocular cuando el vehículo no la provee."
+  },
+  {
+    "id": "t_sistemas_seguridad",
+    "texto": "¿Son obligatorios DRI (sillita infantil), traba para niños en puertas traseras y sistemas de ventilación/mandos e instrumental?",
+    "opciones": [
+      "No, quedan a criterio del propietario.",
+      "Sí, en todos los casos.",
+      "Sólo para vehículos de servicio público."
+    ],
+    "correcta": 1,
+    "explicacion": "Sistemas y DRI son exigibles según categoría/uso y normativa vigente."
+  },
+  {
+    "id": "t_adelantar_derecha",
+    "texto": "¿Se puede adelantar por la derecha?",
+    "opciones": ["No, nunca.", "No, salvo excepciones previstas por la ley.", "Sí."],
+    "correcta": 1,
+    "explicacion": "Sólo en situaciones específicas (por ejemplo, si el vehículo a adelantar va a girar a la izquierda y hay espacio seguro a la derecha)."
+  },
+  {
+    "id": "t_sendas_ciclistas",
+    "texto": "Las sendas/ciclovías para la circulación de ciclistas son:",
+    "opciones": [
+      "Para uso exclusivo de los ciclistas.",
+      "Para ciclistas y motociclistas.",
+      "Invadibles por otros vehículos en casos excepcionales."
+    ],
+    "correcta": 0,
+    "explicacion": "Son exclusivas; no deben ser invadidas por motorizados."
+  },
+  {
+    "id": "t_carril_bus_adelantar",
+    "texto": "Para adelantar, ¿puede invadir un carril exclusivo para ómnibus y taxis?",
+    "opciones": [
+      "No, está prohibido utilizar dicho carril.",
+      "Sí, cuando la línea exterior sea continua.",
+      "Sí, siempre está permitido."
+    ],
+    "correcta": 0,
+    "explicacion": "Los carriles exclusivos no pueden ser invadidos por particulares."
+  },
+  {
+    "id": "t_alcohol_snc",
+    "texto": "¿Qué es el alcohol desde el punto de vista de sus efectos en el organismo?",
+    "opciones": [
+      "Un estimulante que aporta calorías.",
+      "Una sustancia que deprime el sistema nervioso central.",
+      "Un protector contra el frío sin efectos a dosis bajas."
+    ],
+    "correcta": 1,
+    "explicacion": "Es un depresor del SNC; reduce reflejos y juicio."
+  },
+  {
+    "id": "t_advertir_maniobras",
+    "texto": "¿Deben advertirse las maniobras durante la circulación?",
+    "opciones": [
+      "Sí, previamente y con precaución, sin crear riesgo ni afectar la fluidez.",
+      "Sólo cuando un vehículo circula detrás.",
+      "Sólo si crean riesgo o afectan la fluidez."
+    ],
+    "correcta": 0,
+    "explicacion": "Señalizar anticipadamente es obligatorio para la seguridad vial."
+  },
+  {
+    "id": "t_fatiga_factores",
+    "texto": "¿Cuál de los siguientes factores facilita la aparición de la fatiga al conducir?",
+    "opciones": ["Dormir demasiado.", "Cambios de postura frecuentes.", "Disminuir los descansos o hacerlos inadecuadamente."],
+    "correcta": 2,
+    "explicacion": "La falta de pausas y el descanso insuficiente fomentan la fatiga."
+  },
+  {
+    "id": "t_casco_golpe",
+    "texto": "¿Sirve el casco una vez que ha sufrido un golpe fuerte?",
+    "opciones": ["Sí, dura muchos años.", "Se recomienda no utilizarlo, pero puede usarse.", "No, pierde su eficacia protectora."],
+    "correcta": 2,
+    "explicacion": "Los cascos deben reemplazarse tras impactos significativos."
+  },
+  {
+    "id": "t_moto_tolerancia",
+    "texto": "¿Cuál es la tolerancia máxima de alcohol permitida para motociclistas?",
+    "opciones": ["0,2 g/L de sangre.", "0,0 g/L de sangre.", "0,5 g/L de sangre."],
+    "correcta": 0,
+    "explicacion": "El límite para motovehículos suele ser 0,2 g/L (ver norma local)."
+  },
+  {
+    "id": "t_moto_patente",
+    "texto": "Una moto para poder circular en la vía pública, ¿debe estar patentada?",
+    "opciones": [
+      "No, por sus dimensiones reducidas.",
+      "Sí, con sólo solicitar el trámite en el registro.",
+      "Sí, con la chapa patente colocada."
+    ],
+    "correcta": 2,
+    "explicacion": "Debe estar inscripta y con placa colocada."
+  },
+  {
+    "id": "t_semaforo_amarillo",
+    "texto": "¿Qué indica la luz amarilla de un semáforo?",
+    "opciones": [
+      "Indica 'alto' y detenerse antes de la línea o senda.",
+      "Detenerse si no se alcanzará a trasponer la encrucijada.",
+      "Indica avanzar."
+    ],
+    "correcta": 1,
+    "explicacion": "Advierte cambio a rojo; se debe detener si no es seguro continuar."
+  },
+  {
+    "id": "t_veh_circulacion",
+    "texto": "¿Por dónde deben circular los vehículos?",
+    "opciones": [
+      "Por la calzada, respetando el carril de velocidad más rápido.",
+      "Por la calzada, sobre la derecha y en el sentido señalizado.",
+      "Por la acera."
+    ],
+    "correcta": 1,
+    "explicacion": "Se circula por la calzada, a la derecha y según sentido indicado."
+  },
+  {
+    "id": "t_ciclo_profundidad",
+    "texto": "¿Cuál es la profundidad mínima admisible en las ranuras de la banda de rodamiento del neumático en un ciclomotor?",
+    "opciones": ["1,6 mm.", "1 mm.", "0,50 mm."],
+    "correcta": 1,
+    "explicacion": "Para ciclomotores se exige al menos 1 mm de dibujo útil."
+  },
+  {
+    "id": "t_moto_luz_baja",
+    "texto": "Un motovehículo, ¿debe circular con luz baja permanentemente encendida?",
+    "opciones": ["No, sólo durante la noche.", "No, debe llevar luz alta.", "Sí, aun con plena luminosidad diurna."],
+    "correcta": 2,
+    "explicacion": "Las motos deben circular con luz baja siempre encendida para ser vistas."
+  }
+]
