@@ -1,22 +1,28 @@
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { AnimatePresence, motion } from 'framer-motion'
-import { HashRouter } from 'react-router-dom'
+import { HashRouter, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import AppRouter from './router'
+import { Layout } from './ui'
 
-/** App envuelve el router para animaciones globales */
+/**
+ * App envuelve el router y aplica animaciones entre páginas.
+ * Se utiliza AnimatePresence para mantener la ruta anterior mientras se anima la nueva.
+ */
+function AnimatedAppRouter() {
+    const location = useLocation()
+    return (
+        <AnimatePresence mode="wait">
+            <AppRouter location={location} key={location.pathname} />
+        </AnimatePresence>
+    )
+}
+
 export default function App() {
-    // Nota: animamos a nivel de páginas individuales para simplicidad, ver pages/*
     return (
         <HashRouter>
-            <div className="min-h-screen flex flex-col">
-                <Header />
-                <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">
-                    {/* AppRouter renderiza las páginas */}
-                    <AppRouter />
-                </main>
-                <Footer />
-            </div>
+            <Layout>
+                {/* AppRouter renderiza las páginas con animación */}
+                <AnimatedAppRouter />
+            </Layout>
         </HashRouter>
     )
 }

@@ -8,8 +8,19 @@
     />
     <title>Simulador Licencia Santa Fe</title>
   </head>
-  <body class="bg-white text-gray-900">
+  <body class="bg-background text-foreground">
     <div id="root"></div>
+    <script>
+      (() => {
+        const stored = localStorage.getItem('theme')
+        if (
+          stored === 'dark' ||
+          (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

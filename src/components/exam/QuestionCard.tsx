@@ -10,7 +10,7 @@ type Props = {
 
 export default function QuestionCard({ q, selected, onSelect, feedback }: Props) {
   return (
-    <article className="rounded-2xl border border-gray-200 p-4 sm:p-6 bg-white shadow-sm">
+    <article className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-background p-4 sm:p-6 shadow-sm">
       <header className="mb-3">
         <h2 className="text-lg font-semibold">{q.texto}</h2>
       </header>
