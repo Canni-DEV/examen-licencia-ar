@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { StudySection } from '../types'
 import { useTranslation } from 'react-i18next'
 import { publicPath } from '../utils/paths'
+import { TabNav, TabItem } from '../ui'
 
 type Tab = 'manual' | 'senales' | 'material'
 
@@ -20,14 +21,16 @@ export default function StudyPage() {
     fetch(url).then(r => r.json()).then(setSections).catch(() => setSections([]))
   }, [tab, i18n.language])
 
+  const tabs: TabItem[] = [
+    { id: 'manual', label: t('study.manual') },
+    { id: 'senales', label: t('study.signals') },
+    { id: 'material', label: t('study.material') }
+  ]
+
   return (
     <section>
       <h1 className="text-2xl font-bold mb-4">{t('nav.study')}</h1>
-      <div className="flex gap-2 mb-4 overflow-auto">
-        <TabBtn active={tab === 'manual'} onClick={() => setTab('manual')}>{t('study.manual')}</TabBtn>
-        <TabBtn active={tab === 'senales'} onClick={() => setTab('senales')}>{t('study.signals')}</TabBtn>
-        <TabBtn active={tab === 'material'} onClick={() => setTab('material')}>{t('study.material')}</TabBtn>
-      </div>
+      <TabNav items={tabs} current={tab} onChange={(id) => setTab(id as Tab)} className="mb-4" />
 
       <div className="prose max-w-none">
         {sections.map((s, i) => (
@@ -38,21 +41,5 @@ export default function StudyPage() {
         ))}
       </div>
     </section>
-  )
-}
-
-function TabBtn({ active, children, onClick }: any) {
-  return (
-    <button
-      onClick={onClick}
-      className={
-        'px-3 py-2 rounded-xl border ' +
-        (active ? 'border-brand-primary text-brand-primary bg-blue-50' : 'hover:bg-gray-50')
-      }
-      role="tab"
-      aria-selected={active}
-    >
-      {children}
-    </button>
   )
 }

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { Card } from '../ui'
 
 export default function ExamSimulatorPage() {
   const { t } = useTranslation()
@@ -14,12 +15,10 @@ export default function ExamSimulatorPage() {
       <h1 className="text-2xl font-bold mb-4">{t('nav.exam')}</h1>
       <div className="grid sm:grid-cols-2 gap-4">
         {items.map((it) => (
-          <Link
-            key={it.to}
-            to={it.to}
-            className="rounded-2xl border p-6 hover:shadow-md transition-shadow"
-          >
-            <span className="text-lg font-semibold">{it.title}</span>
+          <Link key={it.to} to={it.to} className="block">
+            <Card className="p-6 hover:shadow-md transition-shadow">
+              <span className="text-lg font-semibold">{it.title}</span>
+            </Card>
           </Link>
         ))}
       </div>

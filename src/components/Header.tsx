@@ -1,13 +1,18 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import LanguageSelector from './LanguageSelector'
-import NavTabs from './NavTabs'
+import { TabNav, TabItem } from '../ui'
 
 export default function Header() {
   const { t } = useTranslation()
   const loc = useLocation()
+  const items: TabItem[] = [
+    { id: 'study', label: t('nav.study'), to: '/estudio' },
+    { id: 'exam', label: t('nav.exam'), to: '/simulador' }
+  ]
+  const current = loc.pathname.includes('/simulador') ? 'exam' : 'study'
   return (
-    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-200">
+    <header className="sticky top-0 z-40 bg-background/80 backdrop-blur border-b border-gray-200 dark:border-gray-700">
       <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
         <Link to="/" className="font-semibold text-lg" aria-label={t('appTitle')}>
           {t('appTitle')}
@@ -19,8 +24,8 @@ export default function Header() {
         </div>
       </div>
       {/* tabs móviles */}
-      <div className="sm:hidden border-t border-gray-200">
-        <NavTabs currentPath={loc.pathname} />
+      <div className="sm:hidden border-t border-gray-200 dark:border-gray-700">
+        <TabNav items={items} current={current} className="grid grid-cols-2 text-center" />
       </div>
     </header>
   )
