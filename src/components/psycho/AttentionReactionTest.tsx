@@ -260,13 +260,17 @@ export default function AttentionReactionTest({
   }, [])
 
   return (
-    <div className="rounded-2xl border p-4 sm:p-6 bg-white shadow-sm">
+    <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 bg-background shadow-sm">
       {!compact && <h2 className="text-lg font-semibold mb-2">Atención + Reacción</h2>}
 
-      <canvas ref={canvasRef} className="w-full block border rounded" aria-label="Responde al estímulo." />
+      <canvas
+        ref={canvasRef}
+        className="w-full block border border-gray-300 dark:border-gray-600 rounded bg-background"
+        aria-label="Responde al estímulo."
+      />
 
       {!compact && (
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
           Círculo amarillo → “Círculo” (F). Triángulo azul → “Triángulo” (J). Cuadrado rojo → no presionar.
         </p>
       )}
@@ -278,8 +282,18 @@ export default function AttentionReactionTest({
 
         {phase === 'stim' && (
           <>
-            <button className="px-4 py-2 rounded-xl border" onClick={() => handleResponse('circle')}>Círculo</button>
-            <button className="px-4 py-2 rounded-xl border" onClick={() => handleResponse('triangle')}>Triángulo</button>
+            <button
+              className="px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-background text-foreground"
+              onClick={() => handleResponse('circle')}
+            >
+              Círculo
+            </button>
+            <button
+              className="px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-background text-foreground"
+              onClick={() => handleResponse('triangle')}
+            >
+              Triángulo
+            </button>
           </>
         )}
 
@@ -289,7 +303,7 @@ export default function AttentionReactionTest({
       </div>
 
       {phase === 'finished' && !compact && (
-        <div className="mt-4 rounded-xl border p-3 text-sm">
+        <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-background p-3 text-sm">
           <p className="font-semibold mb-1">Test finalizado</p>
           <ul className="ml-5 list-disc">
             <li>Aciertos: {hitsRef.current}</li>
