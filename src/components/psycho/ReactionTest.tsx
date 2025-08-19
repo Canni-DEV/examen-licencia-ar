@@ -145,13 +145,13 @@ export default function ReactionTest({
   }, [finished, phase])
 
   return (
-    <div className="rounded-2xl border p-4 sm:p-6 bg-white shadow-sm">
+    <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 bg-background shadow-sm">
       {!compact && <h2 className="text-lg font-semibold mb-2">{t('psycho.reaction.title')}</h2>}
-      {!compact && <p className="text-sm text-gray-600 mb-4">{t('psycho.reaction.desc')}</p>}
+      {!compact && <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{t('psycho.reaction.desc')}</p>}
 
       {/* Progreso */}
       {!finished && (
-        <p className="text-xs text-gray-500 mb-2">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
           Intento {trialIdx + 1} de {trialsCount}
         </p>
       )}
@@ -189,7 +189,7 @@ export default function ReactionTest({
 
       {/* Resumen final (práctica) */}
       {finished && !compact && (
-        <div className="mt-4 rounded-xl border p-3 text-sm">
+        <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-background p-3 text-sm">
           <p className="font-semibold mb-2">Resumen</p>
           <ul className="ml-5 list-disc">
             <li>Intentos: {trialsCount}</li>

@@ -500,7 +500,7 @@ export default function CoordinationTest({
     function TouchHoldBtn({ label, onHoldChange }: { label: string; onHoldChange: (down: boolean) => void }) {
         return (
             <button
-                className="px-4 py-3 rounded-lg border select-none"
+                className="px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-background text-foreground select-none"
                 onMouseDown={() => onHoldChange(true)}
                 onMouseUp={() => onHoldChange(false)}
                 onMouseLeave={() => onHoldChange(false)}
@@ -513,18 +513,18 @@ export default function CoordinationTest({
     }
 
     return (
-        <div className="rounded-2xl border p-4 sm:p-6 bg-white shadow-sm">
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 bg-background shadow-sm">
             {!compact && <h2 className="text-lg font-semibold mb-2">Coordinación bimanual</h2>}
 
             <canvas
                 ref={canvasRef}
-                className="w-full block border rounded"
+                className="w-full block border border-gray-300 dark:border-gray-600 rounded bg-background"
                 tabIndex={0}
                 aria-label="Mantén los cuadrados dentro de sus carriles. A/D para izquierdo, J/L para derecho."
             />
 
             {!compact && (
-                <p className="mt-2 text-sm text-gray-600">
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                     A/D (izq) · J/L (der). Dura {durationSec}s. Descalifica si permanecés fuera {maxOutsideSec}s acumulados.
                 </p>
             )}
@@ -543,11 +543,11 @@ export default function CoordinationTest({
 
             <div className="mt-3 flex gap-2">
                 {!running && <button className="px-4 py-2 rounded-xl bg-blue-600 text-white" onClick={start}>Iniciar</button>}
-                {running && <button className="px-4 py-2 rounded-xl border" onClick={() => stop(false)}>Interrumpir</button>}
+                {running && <button className="px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600" onClick={() => stop(false)}>Interrumpir</button>}
             </div>
 
             {completed && !compact && (
-                <div className="mt-3 rounded-xl border p-3 text-sm">
+                <div className="mt-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-background p-3 text-sm">
                     <p className="font-semibold">Resumen</p>
                     <ul className="ml-5 list-disc">
                         <li>Izq: fuera {leftOutsideRef.current.toFixed(2)}s · salidas {leftExitsRef.current}</li>

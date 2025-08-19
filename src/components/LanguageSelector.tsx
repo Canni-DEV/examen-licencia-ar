@@ -8,10 +8,10 @@ const langs = [
 export default function LanguageSelector() {
   const { i18n } = useTranslation()
   return (
-    <label className="inline-flex items-center gap-2">
+    <label className="inline-flex items-center">
       <span className="sr-only">Idioma</span>
       <select
-        className="rounded-lg border-gray-300"
+        className="p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-background dark:bg-gray-800 text-sm transition-colors"
         value={i18n.language}
         onChange={(e) => i18n.changeLanguage(e.target.value)}
         aria-label="Idioma"

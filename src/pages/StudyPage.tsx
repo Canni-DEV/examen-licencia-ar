@@ -32,7 +32,7 @@ export default function StudyPage() {
       <h1 className="text-2xl font-bold mb-4">{t('nav.study')}</h1>
       <TabNav items={tabs} current={tab} onChange={(id) => setTab(id as Tab)} className="mb-4" />
 
-      <div className="prose max-w-none">
+      <div className="prose dark:prose-invert max-w-none">
         {sections.map((s, i) => (
           <section key={i} className="mb-6">
             <h2>{s.titulo}</h2>

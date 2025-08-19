@@ -217,12 +217,12 @@ export default function FullExamPage() {
 
       {/* Resumen */}
       {step?.type === 'summary' && (
-        <div className="rounded-2xl border p-4 sm:p-6 bg-white shadow-sm space-y-6">
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 bg-background shadow-sm space-y-6">
           <h2 className="text-xl font-semibold">Resumen del examen</h2>
 
           <div>
             <h3 className="font-semibold mb-2">Preguntas teóricas</h3>
-            <p className="text-sm text-gray-700 mb-2">
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
                 Correctas: {theoryOk(theoryResults)}/{theoryResults.length} ({pct(theoryOk(theoryResults), theoryResults.length)}%) ·
               Umbral: {Math.round(THEORY_PASS_RATIO*100)}% · {theoryPass ? 'Aprobado' : 'No aprobado'}
             </p>
@@ -234,7 +234,7 @@ export default function FullExamPage() {
                     <span className={r.ok ? 'text-green-700' : 'text-red-700'}>
                       Tu respuesta: {r.elegida !== null ? r.opciones[r.elegida] : '—'} {r.ok ? '✓' : '✗'}
                     </span>
-                    {!r.ok && <span className="text-gray-700"> • Correcta: {r.opciones[r.correcta]}</span>}
+                    {!r.ok && <span className="text-gray-700 dark:text-gray-300"> • Correcta: {r.opciones[r.correcta]}</span>}
                   </div>
                 </li>
               ))}
@@ -243,7 +243,7 @@ export default function FullExamPage() {
 
           <div>
             <h3 className="font-semibold mb-2">Preguntas sobre señales</h3>
-            <p className="text-sm text-gray-700 mb-2">
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
                 Correctas: {theoryOk(signsResults)}/{signsResults.length} ({pct(theoryOk(signsResults), signsResults.length)}%) ·
               Umbral: {Math.round(SIGNS_PASS_RATIO*100)}% · {signsPass ? 'Aprobado' : 'No aprobado'}
             </p>
@@ -255,7 +255,7 @@ export default function FullExamPage() {
                     <span className={r.ok ? 'text-green-700' : 'text-red-700'}>
                       Tu respuesta: {r.elegida !== null ? r.opciones[r.elegida] : '—'} {r.ok ? '✓' : '✗'}
                     </span>
-                    {!r.ok && <span className="text-gray-700"> • Correcta: {r.opciones[r.correcta]}</span>}
+                    {!r.ok && <span className="text-gray-700 dark:text-gray-300"> • Correcta: {r.opciones[r.correcta]}</span>}
                   </div>
                 </li>
               ))}
@@ -273,7 +273,7 @@ export default function FullExamPage() {
                   <li>RT medio: {reactSum.meanRt !== null ? `${Math.round(reactSum.meanRt)} ms` : '—'}</li>
                   <li>Resultado: {reactSum.pass ? 'Aprobado' : 'No aprobado'}</li>
                 </ul>
-              ) : <p className="text-gray-600">Sin datos.</p>}
+              ) : <p className="text-gray-600 dark:text-gray-400">Sin datos.</p>}
             </div>
 
             <div className="text-sm">
@@ -293,7 +293,7 @@ export default function FullExamPage() {
                   <li>Umbral de aprobación: ≤ {velSum.thresholdPct}%</li>
                   <li>Resultado: {velSum.pass ? 'Aprobado' : 'No aprobado'}</li>
                 </ul>
-              ) : <p className="text-gray-600">Sin datos.</p>}
+              ) : <p className="text-gray-600 dark:text-gray-400">Sin datos.</p>}
             </div>
 
             <div className="text-sm">
@@ -305,7 +305,7 @@ export default function FullExamPage() {
                   <li>Der: fuera {coordSum.right.outsideSec.toFixed(2)} s · salidas {coordSum.right.exits}</li>
                   <li>Resultado: {(coordSum.pass ?? coordSum.completed) ? 'Aprobado' : 'No aprobado'}</li>
                 </ul>
-              ) : <p className="text-gray-600">Sin datos.</p>}
+              ) : <p className="text-gray-600 dark:text-gray-400">Sin datos.</p>}
             </div>
 
             <div className="text-sm">
@@ -318,13 +318,19 @@ export default function FullExamPage() {
                   <li>Falsas alarmas: {attnSum.falseAlarms} · Inhibiciones correctas: {attnSum.correctInhibitions}</li>
                   <li>Resultado: {attnSum.pass ? 'Aprobado' : 'No aprobado'}</li>
                 </ul>
-              ) : <p className="text-gray-600">Sin datos.</p>}
+              ) : <p className="text-gray-600 dark:text-gray-400">Sin datos.</p>}
             </div>
           </div>
 
-          <div className={`p-3 rounded-xl ${overallPass ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+          <div
+            className={`p-3 rounded-xl ${
+              overallPass
+                ? 'bg-green-50 border border-green-200 dark:bg-green-900 dark:border-green-700'
+                : 'bg-red-50 border border-red-200 dark:bg-red-900 dark:border-red-700'
+            }`}
+          >
             <p className="font-semibold">Resultado final: {overallPass ? 'APROBADO' : 'NO APROBADO'}</p>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
               Criterio: aprobar Teórico ({Math.round(THEORY_PASS_RATIO*100)}%), Señales ({Math.round(SIGNS_PASS_RATIO*100)}%) y todos los módulos psicofísicos.
             </p>
           </div>
