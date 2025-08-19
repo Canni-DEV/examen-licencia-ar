@@ -25,7 +25,7 @@ export default function ConstantVelocityOcclusionTest({
   width = 640,
   height = 300,
   squareSize = 25,
-  attempts = 1,
+  attempts = 3,
   timeoutSec = 10,
   speedMin = 100,
   speedMax = 200,

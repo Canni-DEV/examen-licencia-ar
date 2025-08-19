@@ -23,7 +23,7 @@ type Props = {
 }
 
 export default function AttentionReactionTest({
-  trialsCount = 1,
+  trialsCount = 3,
   circleProb = 0.4,
   distractorProb = 0.2,
   isiRangeMs = [800, 2000],

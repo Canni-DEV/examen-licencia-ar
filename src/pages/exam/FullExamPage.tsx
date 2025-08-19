@@ -20,16 +20,16 @@ import { theoryOk, pct } from '../../utils/score'
 import useExamSteps from './useExamSteps'
 
 // ===================== Configuración fija =====================
-const DATA_LANG = 'es'         
-const THEORY_COUNT = 1
-const SIGNS_COUNT  = 1  
-const THEORY_PASS_RATIO = 0.70
-const SIGNS_PASS_RATIO  = 0.80
+const DATA_LANG = 'es'
+const THEORY_COUNT = 20
+const SIGNS_COUNT = 15
+const THEORY_PASS_RATIO = 0.80
+const SIGNS_PASS_RATIO = 0.80
 
 // ===================== Tipos internos =====================
 type Step =
   | { type: 'theory'; q: Question }
-  | { type: 'sign';   q: Question }
+  | { type: 'sign'; q: Question }
   | { type: 'psy_react' }
   | { type: 'psy_vel' }
   | { type: 'psy_coord' }
@@ -56,12 +56,12 @@ export default function FullExamPage() {
   const [answers, setAnswers] = useState<Record<string, number | null>>({})
 
   const [reactSum, setReactSum] = useState<ReactionSummary | null>(null)
-  const [velSum,   setVelSum]   = useState<OcclusionSummary | null>(null)
+  const [velSum, setVelSum] = useState<OcclusionSummary | null>(null)
   const [coordSum, setCoordSum] = useState<CoordSummary | null>(null)
-  const [attnSum,  setAttnSum]  = useState<AttentionSummary | null>(null)
+  const [attnSum, setAttnSum] = useState<AttentionSummary | null>(null)
 
   const [pickedTheory, setPickedTheory] = useState<Question[]>([])
-  const [pickedSigns,  setPickedSigns]  = useState<Question[]>([])
+  const [pickedSigns, setPickedSigns] = useState<Question[]>([])
 
   const load = async () => {
     const [theory, signs]: [Question[], Question[]] = await Promise.all([
@@ -70,14 +70,14 @@ export default function FullExamPage() {
     ])
 
     const tPick = pickRandom<Question>(theory, THEORY_COUNT)
-    const sPick = pickRandom<Question>(signs,  SIGNS_COUNT)
+    const sPick = pickRandom<Question>(signs, SIGNS_COUNT)
 
     setPickedTheory(tPick)
     setPickedSigns(sPick)
 
     // map tipado para no ampliar el discriminante a 'string'
     const theorySteps: Step[] = tPick.map((q): Step => ({ type: 'theory', q }))
-    const signSteps:   Step[] = sPick.map((q): Step => ({ type: 'sign', q }))
+    const signSteps: Step[] = sPick.map((q): Step => ({ type: 'sign', q }))
 
     const seq: Step[] = [
       ...theorySteps,
@@ -143,7 +143,7 @@ export default function FullExamPage() {
   }, [signsResults])
 
   const theoryPass = theoryScore.ratio >= THEORY_PASS_RATIO
-  const signsPass  = signsScore.ratio  >= SIGNS_PASS_RATIO
+  const signsPass = signsScore.ratio >= SIGNS_PASS_RATIO
 
   const psychPass =
     (reactSum?.pass ?? false) &&
@@ -223,14 +223,14 @@ export default function FullExamPage() {
           <div>
             <h3 className="font-semibold mb-2">Preguntas teóricas</h3>
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Correctas: {theoryOk(theoryResults)}/{theoryResults.length} ({pct(theoryOk(theoryResults), theoryResults.length)}%) ·
-              Umbral: {Math.round(THEORY_PASS_RATIO*100)}% · {theoryPass ? 'Aprobado' : 'No aprobado'}
+              Correctas: {theoryOk(theoryResults)}/{theoryResults.length} ({pct(theoryOk(theoryResults), theoryResults.length)}%) ·
+              Umbral: {Math.round(THEORY_PASS_RATIO * 100)}% · {theoryPass ? 'Aprobado' : 'No aprobado'}
             </p>
             <ol className="space-y-2 list-decimal ml-5">
               {theoryResults.map(r => (
                 <li key={r.id}>
                   <div className="text-sm">
-                    <span className="font-medium">{r.texto}</span><br/>
+                    <span className="font-medium">{r.texto}</span><br />
                     <span className={r.ok ? 'text-green-700' : 'text-red-700'}>
                       Tu respuesta: {r.elegida !== null ? r.opciones[r.elegida] : '—'} {r.ok ? '✓' : '✗'}
                     </span>
@@ -244,14 +244,14 @@ export default function FullExamPage() {
           <div>
             <h3 className="font-semibold mb-2">Preguntas sobre señales</h3>
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Correctas: {theoryOk(signsResults)}/{signsResults.length} ({pct(theoryOk(signsResults), signsResults.length)}%) ·
-              Umbral: {Math.round(SIGNS_PASS_RATIO*100)}% · {signsPass ? 'Aprobado' : 'No aprobado'}
+              Correctas: {theoryOk(signsResults)}/{signsResults.length} ({pct(theoryOk(signsResults), signsResults.length)}%) ·
+              Umbral: {Math.round(SIGNS_PASS_RATIO * 100)}% · {signsPass ? 'Aprobado' : 'No aprobado'}
             </p>
             <ol className="space-y-2 list-decimal ml-5">
               {signsResults.map(r => (
                 <li key={r.id}>
                   <div className="text-sm">
-                    <span className="font-medium">{r.texto}</span><br/>
+                    <span className="font-medium">{r.texto}</span><br />
                     <span className={r.ok ? 'text-green-700' : 'text-red-700'}>
                       Tu respuesta: {r.elegida !== null ? r.opciones[r.elegida] : '—'} {r.ok ? '✓' : '✗'}
                     </span>
@@ -286,7 +286,7 @@ export default function FullExamPage() {
                     (() => {
                       const nums = velSum.attempts.map(a => a.spatialErrorPct).filter(n => Number.isFinite(n))
                       if (!nums.length) return '—'
-                      const m = nums.reduce((x,y)=>x+y,0)/nums.length
+                      const m = nums.reduce((x, y) => x + y, 0) / nums.length
                       return `${m.toFixed(1)}%`
                     })()
                   }</li>
@@ -323,15 +323,14 @@ export default function FullExamPage() {
           </div>
 
           <div
-            className={`p-3 rounded-xl ${
-              overallPass
+            className={`p-3 rounded-xl ${overallPass
                 ? 'bg-green-50 border border-green-200 dark:bg-green-900 dark:border-green-700'
                 : 'bg-red-50 border border-red-200 dark:bg-red-900 dark:border-red-700'
-            }`}
+              }`}
           >
             <p className="font-semibold">Resultado final: {overallPass ? 'APROBADO' : 'NO APROBADO'}</p>
             <p className="text-sm text-gray-700 dark:text-gray-300">
-              Criterio: aprobar Teórico ({Math.round(THEORY_PASS_RATIO*100)}%), Señales ({Math.round(SIGNS_PASS_RATIO*100)}%) y todos los módulos psicofísicos.
+              Criterio: aprobar Teórico ({Math.round(THEORY_PASS_RATIO * 100)}%), Señales ({Math.round(SIGNS_PASS_RATIO * 100)}%) y todos los módulos psicofísicos.
             </p>
           </div>
 

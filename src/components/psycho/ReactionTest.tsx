@@ -22,7 +22,7 @@ type Props = {
 }
 
 export default function ReactionTest({
-  trialsCount = 1,
+  trialsCount = 3,
   delayRangeMs = [800, 2000],
   goodThresholdMs = 600,
   passRatio = 0.6,

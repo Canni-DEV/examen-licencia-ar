@@ -115,8 +115,8 @@ class PathGen {
 }
 
 export default function CoordinationTest({
-    durationSec = 30,
-    laneWidthPx = 150,
+    durationSec = 20,
+    laneWidthPx = 100,
     safetyMarginPx = 5,
     squareSizePx = 20,
     scrollSpeed = 140,
