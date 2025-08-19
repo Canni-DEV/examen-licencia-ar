@@ -1,14 +1,23 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Button from '../../components/Button'
 import ProgressBar from '../../components/ProgressBar'
-import QuestionCard from '../../components/exam/QuestionCard'
-import ReactionTest from '../../components/psycho/ReactionTest'
-import ConstantVelocityOcclusionTest from '../../components/psycho/ConstantVelocityOcclusionTest'
-import CoordinationTest from '../../components/psycho/CoordinationTest'
-import AttentionReactionTest from '../../components/psycho/AttentionReactionTest'
+import { TheoryStep, SignsStep, ReactionStep, VelocityStep, CoordStep, AttentionStep } from './steps'
 import { publicPath } from '../../utils/paths'
 import type { Question } from '../../types'
+import { pickRandom } from '../../utils/random'
+import {
+  normalizeReactionSummary,
+  normalizeOcclusionSummary,
+  normalizeCoordSummary,
+  normalizeAttentionSummary,
+  type ReactionSummary,
+  type OcclusionSummary,
+  type CoordSummary,
+  type AttentionSummary,
+} from '../../utils/normalizers'
+import { theoryOk, pct } from '../../utils/score'
+import useExamSteps from './useExamSteps'
 
 // ===================== Configuración fija =====================
 const DATA_LANG = 'es'         
@@ -37,144 +46,12 @@ type TheoryResult = {
   tipo: 'theory' | 'sign'
 }
 
-type ReactionSummary = {
-  attempts: { rt: number | null; tooSoon: boolean }[]
-  meanRt: number | null
-  pass: boolean
-}
-type OcclusionSummary = {
-  attempts: { hit: boolean; spatialErrorPct: number; timeout: boolean }[]
-  pass: boolean
-  thresholdPct: number
-}
-type CoordSummary = {
-  completed: boolean
-  left: { outsideSec: number; exits: number }
-  right: { outsideSec: number; exits: number }
-  pass?: boolean
-}
-type AttentionSummary = {
-  acc: number
-  meanRt: number | null
-  hits: number
-  misses: number
-  falseAlarms: number
-  correctInhibitions: number
-  pass: boolean
-}
-
-// ===================== Utilidades =====================
-// shuffle seguro con noUncheckedIndexedAccess
-function fyShuffle<T>(arr: T[]): T[] {
-  const a = arr.slice()
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    const tmp = a[i] as T
-    a[i] = a[j] as T
-    a[j] = tmp
-  }
-  return a
-}
-function pickRandom<T>(arr: T[], n: number): T[] {
-  const m = Math.max(0, Math.min(n, arr.length))
-  return fyShuffle(arr).slice(0, m)
-}
-
-// ===== Normalizadores defensivos para onComplete de tests =====
-function normalizeReactionSummary(payload: unknown): ReactionSummary {
-  const PASS_RT_MS = 600
-  if (payload && typeof payload === 'object' && Array.isArray((payload as any).attempts)) {
-    const p: any = payload
-    const attempts = p.attempts.map((a: any) => ({
-      rt: typeof a?.rt === 'number' ? a.rt : null,
-      tooSoon: !!a?.tooSoon
-    }))
-    const meanRt =
-      typeof p.meanRt === 'number'
-        ? p.meanRt
-        : (attempts.filter((a: any) => a.rt != null).length
-            ? attempts.reduce((acc: number, a: any) => acc + (a.rt ?? 0), 0) /
-              attempts.filter((a: any) => a.rt != null).length
-            : null)
-    const pass = typeof p.pass === 'boolean' ? p.pass : (meanRt !== null && meanRt <= PASS_RT_MS)
-    return { attempts, meanRt, pass }
-  }
-  if (typeof payload === 'number' || payload === null) {
-    const rt = payload === null ? null : payload
-    const pass = rt !== null && rt <= PASS_RT_MS
-    return { attempts: [{ rt, tooSoon: false }], meanRt: rt, pass }
-  }
-  if (payload && typeof payload === 'object') {
-    const p: any = payload
-    const rt = typeof p.ms === 'number' ? p.ms : (typeof p.meanRt === 'number' ? p.meanRt : null)
-    const pass = typeof p.pass === 'boolean' ? p.pass : (rt !== null && rt <= PASS_RT_MS)
-    return { attempts: [{ rt, tooSoon: false }], meanRt: rt, pass }
-  }
-  return { attempts: [], meanRt: null, pass: false }
-}
-
-function normalizeOcclusionSummary(payload: unknown): OcclusionSummary {
-  const DEFAULT_THRESHOLD = 50
-  if (payload && typeof payload === 'object') {
-    const p: any = payload
-    if (Array.isArray(p.attempts)) {
-      return {
-        attempts: p.attempts.map((a: any) => ({
-          hit: !!a?.hit,
-          spatialErrorPct: typeof a?.spatialErrorPct === 'number' ? a.spatialErrorPct : (a?.errorPct ?? 0),
-          timeout: !!a?.timeout
-        })),
-        pass: !!p.pass,
-        thresholdPct: typeof p.thresholdPct === 'number' ? p.thresholdPct : DEFAULT_THRESHOLD
-      }
-    }
-    if (typeof p.avgError === 'number') {
-      const thr = typeof p.thresholdPct === 'number' ? p.thresholdPct : DEFAULT_THRESHOLD
-      return {
-        attempts: [{ hit: p.avgError <= thr, spatialErrorPct: p.avgError, timeout: false }],
-        pass: !!p.pass,
-        thresholdPct: thr
-      }
-    }
-  }
-  return { attempts: [], pass: false, thresholdPct: DEFAULT_THRESHOLD }
-}
-
-function normalizeCoordSummary(payload: unknown): CoordSummary {
-  if (payload && typeof payload === 'object') {
-    const p: any = payload
-    return {
-      completed: !!p.completed,
-      left: { outsideSec: Number(p?.left?.outsideSec ?? 0), exits: Number(p?.left?.exits ?? 0) },
-      right:{ outsideSec: Number(p?.right?.outsideSec ?? 0), exits: Number(p?.right?.exits ?? 0) },
-      pass: typeof p.pass === 'boolean' ? p.pass : !!p.completed
-    }
-  }
-  return { completed: false, left: { outsideSec: 0, exits: 0 }, right: { outsideSec: 0, exits: 0 }, pass: false }
-}
-
-function normalizeAttentionSummary(payload: unknown): AttentionSummary {
-  if (payload && typeof payload === 'object') {
-    const p: any = payload
-    return {
-      acc: Number(p.acc ?? 0),
-      meanRt: typeof p.meanRt === 'number' ? p.meanRt : null,
-      hits: Number(p.hits ?? 0),
-      misses: Number(p.misses ?? 0),
-      falseAlarms: Number(p.falseAlarms ?? 0),
-      correctInhibitions: Number(p.correctInhibitions ?? 0),
-      pass: !!p.pass
-    }
-  }
-  return { acc: 0, meanRt: null, hits: 0, misses: 0, falseAlarms: 0, correctInhibitions: 0, pass: false }
-}
-
 // ===================== Página =====================
 export default function FullExamPage() {
   const { t } = useTranslation()
 
   const [steps, setSteps] = useState<Step[]>([])
-  const [idx, setIdx] = useState(0)
+  const { idx, step, total, goNext, goPrev, advanceOnceFrom, restart } = useExamSteps(steps)
 
   const [answers, setAnswers] = useState<Record<string, number | null>>({})
 
@@ -186,52 +63,40 @@ export default function FullExamPage() {
   const [pickedTheory, setPickedTheory] = useState<Question[]>([])
   const [pickedSigns,  setPickedSigns]  = useState<Question[]>([])
 
-   // ✅ compuerta: evita doble avance desde el mismo paso
-  const completedIdxRef = useRef<Set<number>>(new Set())
-  const advanceOnceFrom = (fromIndex: number, after?: () => void) => {
-    if (completedIdxRef.current.has(fromIndex)) return
-    completedIdxRef.current.add(fromIndex)
-    after?.()
-    setIdx(i => Math.min((steps.length || 1) - 1, i + 1))
+  const load = async () => {
+    const [theory, signs]: [Question[], Question[]] = await Promise.all([
+      fetch(publicPath(`/data/${DATA_LANG}/preguntas_teoricas.json`)).then(r => r.json()),
+      fetch(publicPath(`/data/${DATA_LANG}/preguntas_senales.json`)).then(r => r.json())
+    ])
+
+    const tPick = pickRandom<Question>(theory, THEORY_COUNT)
+    const sPick = pickRandom<Question>(signs,  SIGNS_COUNT)
+
+    setPickedTheory(tPick)
+    setPickedSigns(sPick)
+
+    // map tipado para no ampliar el discriminante a 'string'
+    const theorySteps: Step[] = tPick.map((q): Step => ({ type: 'theory', q }))
+    const signSteps:   Step[] = sPick.map((q): Step => ({ type: 'sign', q }))
+
+    const seq: Step[] = [
+      ...theorySteps,
+      ...signSteps,
+      { type: 'psy_react' },
+      { type: 'psy_vel' },
+      { type: 'psy_coord' },
+      { type: 'psy_attn' },
+      { type: 'summary' }
+    ]
+    setSteps(seq)
+    setAnswers({})
+    setReactSum(null); setVelSum(null); setCoordSum(null); setAttnSum(null)
+    restart()
   }
 
   useEffect(() => {
-    async function load() {
-      const [theory, signs]: [Question[], Question[]] = await Promise.all([
-        fetch(publicPath(`/data/${DATA_LANG}/preguntas_teoricas.json`)).then(r => r.json()),
-        fetch(publicPath(`/data/${DATA_LANG}/preguntas_senales.json`)).then(r => r.json())
-      ])
-
-      const tPick = pickRandom<Question>(theory, THEORY_COUNT)
-      const sPick = pickRandom<Question>(signs,  SIGNS_COUNT)
-
-      setPickedTheory(tPick)
-      setPickedSigns(sPick)
-
-      // map tipado para no ampliar el discriminante a 'string'
-      const theorySteps: Step[] = tPick.map((q): Step => ({ type: 'theory', q }))
-      const signSteps:   Step[] = sPick.map((q): Step => ({ type: 'sign', q }))
-
-      const seq: Step[] = [
-        ...theorySteps,
-        ...signSteps,
-        { type: 'psy_react' },
-        { type: 'psy_vel' },
-        { type: 'psy_coord' },
-        { type: 'psy_attn' },
-        { type: 'summary' }
-      ]
-      setSteps(seq)
-      setIdx(0)
-      setAnswers({})
-      setReactSum(null); setVelSum(null); setCoordSum(null); setAttnSum(null)
-      completedIdxRef.current.clear()    
-    }
     load()
   }, [])
-
-  const step = steps[idx]
-  const total = steps.length || 1
 
   const canPrev = idx > 0
   const canNext = useMemo(() => {
@@ -244,8 +109,9 @@ export default function FullExamPage() {
     return true
   }, [step, answers])
 
-  const goNext = () => { if (idx < total - 1) setIdx(i => i + 1) }
-  const goPrev = () => setIdx(i => Math.max(0, i - 1))
+  const handleRestart = () => {
+    load()
+  }
 
   // ===== resumen =====
   const theoryResults: TheoryResult[] = useMemo(() => {
@@ -294,25 +160,24 @@ export default function FullExamPage() {
 
       {/* Preguntas */}
       {step?.type === 'theory' && (
-        <QuestionCard
-          q={step.q}
+        <TheoryStep
+          question={step.q}
           selected={answers[step.q.id] ?? null}
           onSelect={(sel) => setAnswers(a => ({ ...a, [step.q.id]: sel }))}
         />
       )}
       {step?.type === 'sign' && (
-        <QuestionCard
-          q={step.q}
+        <SignsStep
+          question={step.q}
           selected={answers[step.q.id] ?? null}
           onSelect={(sel) => setAnswers(a => ({ ...a, [step.q.id]: sel }))}
         />
       )}
 
-            {/* Psico — nota: key={idx} para forzar remount y evitar efectos/timers viejos */}
+      {/* Psico — nota: key={idx} para forzar remount y evitar efectos/timers viejos */}
       {step?.type === 'psy_react' && (
-        <ReactionTest
+        <ReactionStep
           key={idx}
-          compact
           onComplete={(sum) => {
             const from = idx
             advanceOnceFrom(from, () => setReactSum(normalizeReactionSummary(sum)))
@@ -321,9 +186,8 @@ export default function FullExamPage() {
       )}
 
       {step?.type === 'psy_vel' && (
-        <ConstantVelocityOcclusionTest
+        <VelocityStep
           key={idx}
-          compact
           onComplete={(sum) => {
             const from = idx
             advanceOnceFrom(from, () => setVelSum(normalizeOcclusionSummary(sum)))
@@ -332,9 +196,8 @@ export default function FullExamPage() {
       )}
 
       {step?.type === 'psy_coord' && (
-        <CoordinationTest
+        <CoordStep
           key={idx}
-          compact
           onComplete={(sum) => {
             const from = idx
             advanceOnceFrom(from, () => setCoordSum(normalizeCoordSummary(sum)))
@@ -343,9 +206,8 @@ export default function FullExamPage() {
       )}
 
       {step?.type === 'psy_attn' && (
-        <AttentionReactionTest
+        <AttentionStep
           key={idx}
-          compact
           onComplete={(sum) => {
             const from = idx
             advanceOnceFrom(from, () => setAttnSum(normalizeAttentionSummary(sum)))
@@ -361,7 +223,7 @@ export default function FullExamPage() {
           <div>
             <h3 className="font-semibold mb-2">Preguntas teóricas</h3>
             <p className="text-sm text-gray-700 mb-2">
-              Correctas: {thoryOk(theoryResults)}/{theoryResults.length} ({pct(thoryOk(theoryResults), theoryResults.length)}%) ·
+                Correctas: {theoryOk(theoryResults)}/{theoryResults.length} ({pct(theoryOk(theoryResults), theoryResults.length)}%) ·
               Umbral: {Math.round(THEORY_PASS_RATIO*100)}% · {theoryPass ? 'Aprobado' : 'No aprobado'}
             </p>
             <ol className="space-y-2 list-decimal ml-5">
@@ -382,7 +244,7 @@ export default function FullExamPage() {
           <div>
             <h3 className="font-semibold mb-2">Preguntas sobre señales</h3>
             <p className="text-sm text-gray-700 mb-2">
-              Correctas: {thoryOk(signsResults)}/{signsResults.length} ({pct(thoryOk(signsResults), signsResults.length)}%) ·
+                Correctas: {theoryOk(signsResults)}/{signsResults.length} ({pct(theoryOk(signsResults), signsResults.length)}%) ·
               Umbral: {Math.round(SIGNS_PASS_RATIO*100)}% · {signsPass ? 'Aprobado' : 'No aprobado'}
             </p>
             <ol className="space-y-2 list-decimal ml-5">
@@ -468,7 +330,7 @@ export default function FullExamPage() {
           </div>
 
           <div className="flex gap-2">
-            <Button onClick={() => window.location.reload()}>Reiniciar examen</Button>
+            <Button onClick={handleRestart}>Reiniciar examen</Button>
           </div>
         </div>
       )}
@@ -486,13 +348,4 @@ export default function FullExamPage() {
       )}
     </section>
   )
-}
-
-// helpers locales para el resumen
-function thoryOk(items: TheoryResult[]) {
-  return items.filter(r => r.ok).length
-}
-function pct(ok: number, total: number) {
-  const t = total || 1
-  return Math.round((ok / t) * 100)
 }
