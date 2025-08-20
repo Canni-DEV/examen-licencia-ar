@@ -1,3 +1,14 @@
 [
-  { "titulo": "Material complementario A", "html": "<p>Apuntes y consejos prácticos.</p>" }
+  {
+    "titulo": "Provincia de Santa Fe — Material oficial APSV",
+    "html": "<ul><li><a href=\"https://www.santafe.gov.ar/index.php/web/content/download/156883/764852/file/Material%20de%20Estudio.pdf\" target=\"_blank\" rel=\"noopener\">Manual de Conductores (Material de Estudio)</a> — Manual completo de formación de conductores: definiciones, factores del tránsito, normas de circulación, licencias específicas, sanciones y normativa (PDF).</li><li><a href=\"https://www.santafe.gob.ar/examenlicencia/examenETLC/listarCuestionarios.php\" target=\"_blank\" rel=\"noopener\">Simulador de examen teórico (oficial)</a> — Portal oficial para practicar cuestionarios del examen teórico, por temática o cuestionario.</li></ul>"
+  },
+  {
+    "titulo": "Provincia de Santa Fe — Señalización oficial (folletos)",
+    "html": "<ul><li><a href=\"https://www.santafe.gov.ar/index.php/content/download/156889/764868/file/Folleto\" target=\"_blank\" rel=\"noopener\">Folleto Señalización I</a> — Lámina con señalamiento vertical informativo y señalamiento horizontal (imagen/folleto oficial).</li><li><a href=\"https://www.santafe.gov.ar/index.php/content/download/156890/764871/file/Folleto\" target=\"_blank\" rel=\"noopener\">Folleto Señalización II</a> — Lámina con señalamiento vertical reglamentario y preventivo, y señalamiento transitorio (imagen/folleto oficial).</li></ul>"
+  },
+  {
+    "titulo": "Municipalidad de Rosario — Material oficial",
+    "html": "<ul><li><a href=\"https://www.rosario.gob.ar/web/sites/default/files/manual_licencia_conducir.pdf\" target=\"_blank\" rel=\"noopener\">Manual de Conductores (Municipalidad de Rosario)</a> — Guía de contenidos para la licencia local: normas principales, prioridades y recomendaciones (PDF).</li><li><a href=\"https://www.rosario.gob.ar/web/sites/default/files/seniales_transito2.pdf\" target=\"_blank\" rel=\"noopener\">Señales de tránsito (Rosario)</a> — Compendio resumido de señales viales con iconografía y significado (PDF, 3 páginas).</li></ul>"
+  }
 ]
