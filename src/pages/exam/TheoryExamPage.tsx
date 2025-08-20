@@ -20,8 +20,8 @@ export default function TheoryExamPage() {
   }, [i18n.language])
 
   const q = data[idx]
-  const selected = (answers[idx] ?? null)
-  const feedback = submitted && q && selected  != null
+  const selected = answers[idx] ?? null
+  const feedback = selected !== null && q
     ? (selected === q.correcta ? 'correct' : 'incorrect')
     : null
 
@@ -58,11 +58,16 @@ export default function TheoryExamPage() {
           {t('actions.prev')}
         </Button>
         {idx < data.length - 1 ? (
-          <Button onClick={() => setIdx((i) => Math.min(data.length - 1, i + 1))}>
+          <Button
+            onClick={() => setIdx((i) => Math.min(data.length - 1, i + 1))}
+            disabled={selected === null}
+          >
             {t('actions.next')}
           </Button>
         ) : (
-          <Button onClick={finish}>{t('actions.finish')}</Button>
+          <Button onClick={finish} disabled={selected === null}>
+            {t('actions.finish')}
+          </Button>
         )}
       </div>
 

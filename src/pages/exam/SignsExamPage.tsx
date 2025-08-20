@@ -20,8 +20,8 @@ export default function SignsExamPage() {
   }, [i18n.language])
 
   const q = data[idx]
-  const selected = (answers[idx] ?? null)
-  const feedback = submitted && q && selected  != null
+  const selected = answers[idx] ?? null
+  const feedback = selected !== null && q
     ? (selected === q.correcta ? 'correct' : 'incorrect')
     : null
 
@@ -38,7 +38,7 @@ export default function SignsExamPage() {
 
   return (
     <section className="space-y-4">
-      <h1 className="text-xl font-semibold">{t('exam.theory')}</h1>
+      <h1 className="text-xl font-semibold">{t('exam.signs')}</h1>
       <ProgressBar value={idx + 1} max={data.length} />
       <p className="text-sm text-gray-600 dark:text-gray-400">{t('exam.progress', { current: idx + 1, total: data.length })}</p>
 
@@ -58,11 +58,16 @@ export default function SignsExamPage() {
           {t('actions.prev')}
         </Button>
         {idx < data.length - 1 ? (
-          <Button onClick={() => setIdx((i) => Math.min(data.length - 1, i + 1))}>
+          <Button
+            onClick={() => setIdx((i) => Math.min(data.length - 1, i + 1))}
+            disabled={selected === null}
+          >
             {t('actions.next')}
           </Button>
         ) : (
-          <Button onClick={finish}>{t('actions.finish')}</Button>
+          <Button onClick={finish} disabled={selected === null}>
+            {t('actions.finish')}
+          </Button>
         )}
       </div>
 
