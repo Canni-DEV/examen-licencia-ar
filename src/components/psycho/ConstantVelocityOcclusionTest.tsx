@@ -25,7 +25,7 @@ export default function ConstantVelocityOcclusionTest({
   width = 640,
   height = 300,
   squareSize = 25,
-  attempts = 1,
+  attempts = 3,
   timeoutSec = 10,
   speedMin = 100,
   speedMax = 200,
@@ -160,13 +160,13 @@ export default function ConstantVelocityOcclusionTest({
   const finished = results.length >= attempts
 
   return (
-    <div className="rounded-2xl border p-4 sm:p-6 bg-white shadow-sm">
+    <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 bg-background shadow-sm">
       {!compact && <h2 className="text-lg font-semibold mb-2">Velocidad constante (ocultamiento)</h2>}
       <canvas
         ref={canvasRef}
         width={width}
         height={height}
-        className="mx-auto block border rounded"
+        className="mx-auto block border border-gray-300 dark:border-gray-600 rounded bg-background"
         onClick={() => {
           if (finished) return
           if (!running) startAttempt()
@@ -185,7 +185,7 @@ export default function ConstantVelocityOcclusionTest({
       />
 
       {!compact && (
-        <div className="mt-3 text-sm text-gray-600">
+        <div className="mt-3 text-sm text-gray-600 dark:text-gray-400">
           <p>Intento {Math.min(results.length + 1, attempts)} / {attempts}</p>
           <p>Click/Space para iniciar y detener. Timeout: {timeoutSec}s. Tamaño: {squareSize}px. Target 30px.</p>
         </div>
@@ -202,7 +202,7 @@ function ResultsPanel({ results }: { results: AttemptResult[] }) {
   const avg = results.reduce((a, r) => a + r.errorPercent, 0) / results.length
   const pass = avg <= 50
   return (
-    <div className="mt-4 rounded-xl border p-3">
+    <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-background p-3">
       <p className="font-semibold">Resumen</p>
       <ul className="list-disc ml-5 text-sm">
         {results.map((r, i) => (

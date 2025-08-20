@@ -40,7 +40,7 @@ export default function TheoryExamPage() {
     <section className="space-y-4">
       <h1 className="text-xl font-semibold">{t('exam.theory')}</h1>
       <ProgressBar value={idx + 1} max={data.length} />
-      <p className="text-sm text-gray-600">{t('exam.progress', { current: idx + 1, total: data.length })}</p>
+      <p className="text-sm text-gray-600 dark:text-gray-400">{t('exam.progress', { current: idx + 1, total: data.length })}</p>
 
       <QuestionCard
         q={q}
@@ -67,7 +67,7 @@ export default function TheoryExamPage() {
       </div>
 
       {submitted && (
-        <div className="rounded-xl border p-4">
+        <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-background p-4">
           <p className="font-semibold">{t('result.score', { score, total: data.length })}</p>
         </div>
       )}

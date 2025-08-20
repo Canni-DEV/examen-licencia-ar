@@ -1,4 +1,7 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, type Location } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import type { ReactNode } from 'react'
+
 import Home from './pages/Home'
 import StudyPage from './pages/StudyPage'
 import ExamSimulatorPage from './pages/ExamSimulatorPage'
@@ -8,18 +11,31 @@ import PsychoTestsPage from './pages/psycho/PsychoTestsPage'
 import FullExamPage from './pages/exam/FullExamPage'
 import ResultsPage from './pages/exam/ResultsPage'
 
-export default function AppRouter() {
+function Page({ children }: { children: ReactNode }) {
   return (
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/estudio" element={<StudyPage />} />
-        <Route path="/simulador" element={<ExamSimulatorPage />} />
-        <Route path="/simulador/teorico" element={<TheoryExamPage />} />
-        <Route path="/simulador/senales" element={<SignsExamPage />} />
-        <Route path="/simulador/psicofisico" element={<PsychoTestsPage />} />
-        <Route path="/simulador/completo" element={<FullExamPage />} />
-        <Route path="/resultado" element={<ResultsPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+export default function AppRouter({ location }: { location: Location }) {
+  return (
+    <Routes location={location} key={location.pathname}>
+      <Route path="/" element={<Page><Home /></Page>} />
+      <Route path="/estudio" element={<Page><StudyPage /></Page>} />
+      <Route path="/simulador" element={<Page><ExamSimulatorPage /></Page>} />
+      <Route path="/simulador/teorico" element={<Page><TheoryExamPage /></Page>} />
+      <Route path="/simulador/senales" element={<Page><SignsExamPage /></Page>} />
+      <Route path="/simulador/psicofisico" element={<Page><PsychoTestsPage /></Page>} />
+      <Route path="/simulador/completo" element={<Page><FullExamPage /></Page>} />
+      <Route path="/resultado" element={<Page><ResultsPage /></Page>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }

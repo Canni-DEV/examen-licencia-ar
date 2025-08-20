@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #0A84FF;
+  --color-bg: #ffffff;
+  --color-fg: #111827;
+  --radius-base: 0.5rem;
+}
+.dark {
+  --color-bg: #0f172a;
+  --color-fg: #f9fafb;
+}
+
 /* Accesibilidad: foco visible */
 :focus-visible {
-  outline: 2px solid #0A84FF;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
