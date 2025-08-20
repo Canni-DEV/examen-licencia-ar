@@ -1,0 +1,402 @@
+[
+  {
+    "id": "s01",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-1.svg",
+    "opciones": ["Prohibido seguir de frente", "Calle de sentido único hacia adelante", "Rotonda obligatoria"],
+    "correcta": 0,
+    "explicacion": "Señal reglamentaria que prohíbe continuar de frente en el sentido indicado."
+  },
+  {
+    "id": "s02",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-2.svg",
+    "opciones": ["Prohibido estacionar", "Contramano (entrada prohibida)", "Sólo tránsito liviano"],
+    "correcta": 1,
+    "explicacion": "Indica ingreso prohibido en ese sentido de circulación (contramano)."
+  },
+  {
+    "id": "s03",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-5.svg",
+    "opciones": ["Prohibido girar en U", "Giro obligatorio en U", "Retome a 100 m"],
+    "correcta": 0,
+    "explicacion": "Prohíbe realizar un giro en U."
+  },
+  {
+    "id": "s04",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-6.svg",
+    "opciones": ["Fin de prohibición de adelantamiento", "Prohibido adelantar", "Velocidad mínima 60 km/h"],
+    "correcta": 1,
+    "explicacion": "Restringe la maniobra de sobrepaso/adelantamiento."
+  },
+  {
+    "id": "s05",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-8.svg",
+    "opciones": ["Prohibido estacionar", "Estacionamiento permitido", "Zona de detención obligatoria"],
+    "correcta": 0,
+    "explicacion": "Prohíbe estacionar en el tramo señalizado."
+  },
+  {
+    "id": "s06",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-9.svg",
+    "opciones": ["Prohibido detenerse y estacionar", "Sólo prohibido estacionar", "Parada de transporte público"],
+    "correcta": 0,
+    "explicacion": "Prohíbe tanto la detención momentánea como el estacionamiento."
+  },
+  {
+    "id": "s07",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-12.svg",
+    "opciones": ["Altura máxima permitida", "Ancho máximo permitido", "Peso máximo permitido"],
+    "correcta": 0,
+    "explicacion": "Indica altura máxima de paso."
+  },
+  {
+    "id": "s08",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-13.svg",
+    "opciones": ["Longitud máxima", "Ancho máximo", "Distancia mínima entre vehículos"],
+    "correcta": 1,
+    "explicacion": "Limita el ancho máximo permitido del vehículo o la carga."
+  },
+  {
+    "id": "s09",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-14.svg",
+    "opciones": ["Altura máxima", "Longitud máxima", "Peso por eje"],
+    "correcta": 1,
+    "explicacion": "Restringe la longitud total del vehículo o combinación de vehículos."
+  },
+  {
+    "id": "s10",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-15.svg",
+    "opciones": ["Velocidad mínima 60 km/h", "Velocidad máxima 60 km/h", "Velocidad sugerida 60 km/h"],
+    "correcta": 1,
+    "explicacion": "Indica el límite máximo de velocidad (el valor varía según el cartel)."
+  },
+  {
+    "id": "s11",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-11(a).svg",
+    "opciones": ["Peso bruto máximo", "Peso por eje máximo", "Altura máxima"],
+    "correcta": 0,
+    "explicacion": "Limita el peso bruto total permitido."
+  },
+  {
+    "id": "s12",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-11(b).svg",
+    "opciones": ["Peso bruto máximo", "Peso por eje máximo", "Longitud máxima"],
+    "correcta": 1,
+    "explicacion": "Restringe la carga máxima por eje del vehículo."
+  },
+  {
+    "id": "s13",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-3(6).svg",
+    "opciones": ["Peatones obligatoriamente por la izquierda", "Prohibido el paso de peatones", "Cruce peatonal"],
+    "correcta": 1,
+    "explicacion": "Prohíbe el paso de peatones."
+  },
+  {
+    "id": "s14",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-3(3).svg",
+    "opciones": ["Ciclovía obligatoria", "Prohibido el paso de bicicletas", "Precaución: ciclistas"],
+    "correcta": 1,
+    "explicacion": "Prohíbe la circulación de bicicletas por esa calzada."
+  },
+  {
+    "id": "s15",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-19.svg",
+    "opciones": ["Prohibición de cadenas", "Uso obligatorio de cadenas", "Pavimento resbaladizo"],
+    "correcta": 1,
+    "explicacion": "Obliga a circular con cadenas cuando las condiciones lo requieran."
+  },
+  {
+    "id": "s16",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-20(a).svg",
+    "opciones": ["Giro obligatorio a la derecha", "Prohibido girar a la derecha", "Desvío provisorio"],
+    "correcta": 0,
+    "explicacion": "Ordena girar a la derecha."
+  },
+  {
+    "id": "s17",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-20(b).svg",
+    "opciones": ["Giro obligatorio a la izquierda", "Prohibido girar a la izquierda", "Preferencia de paso"],
+    "correcta": 0,
+    "explicacion": "Ordena girar a la izquierda."
+  },
+  {
+    "id": "s18",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-21(c).svg",
+    "opciones": ["Sentido único hacia adelante (obligatorio)", "No seguir de frente", "Fin de autopista"],
+    "correcta": 0,
+    "explicacion": "Dirección de marcha obligatoria recto."
+  },
+  {
+    "id": "s19",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-27.svg",
+    "opciones": ["Detenerse y ceder el paso", "Ceda el paso sin detenerse", "Cruce ferroviario"],
+    "correcta": 0,
+    "explicacion": "Obliga a detener totalmente el vehículo y ceder el paso."
+  },
+  {
+    "id": "s20",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-28.svg",
+    "opciones": ["Detención obligatoria", "Ceder prioridad sin necesidad de detenerse si no hay riesgo", "Paso peatonal obligatorio"],
+    "correcta": 1,
+    "explicacion": "Ordena ceder prioridad; se debe detener sólo si es necesario."
+  },
+  {
+    "id": "s21",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-29.svg",
+    "opciones": ["Preferencia para el sentido contrario", "Preferencia propia sobre el sentido contrario", "Rotonda obligatoria"],
+    "correcta": 0,
+    "explicacion": "Indica que se debe ceder el paso al tránsito que circula en sentido contrario (estrechamiento de calzada)."
+  },
+  {
+    "id": "s22",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-7(a)-left.svg",
+    "opciones": ["Curva a la izquierda", "Giro obligatorio a la izquierda", "Desvío por obras"],
+    "correcta": 0,
+    "explicacion": "Señal preventiva que advierte una curva a la izquierda."
+  },
+  {
+    "id": "s23",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-7(a)-right.svg",
+    "opciones": ["Curva a la derecha", "Prohibido girar a la derecha", "Rotonda"],
+    "correcta": 0,
+    "explicacion": "Señal preventiva que advierte una curva a la derecha."
+  },
+  {
+    "id": "s24",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-7(d).svg",
+    "opciones": [ "Desvío a la izquierda", "Fin de autopista","Curvas peligrosas consecutivas"],
+    "correcta": 2,
+    "explicacion": "Advierte dos curvas consecutivas, iniciando a la izquierda."
+  },
+  {
+    "id": "s25",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-8(b).svg",
+    "opciones": ["Camino sinuoso", "Giro obligatorio", "Cambio de sentido"],
+    "correcta": 0,
+    "explicacion": "Camino sinuoso con varias curvas sucesivas (la primera a la derecha)."
+  },
+  {
+    "id": "s26",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-9(a).svg",
+    "opciones": ["Subida fuerte", "Bajada pronunciada", "Desnivel suave"],
+    "correcta": 1,
+    "explicacion": "Advierte una pendiente descendente pronunciada."
+  },
+  {
+    "id": "s27",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-9(b).svg",
+    "opciones": ["Bajada pronunciada", "Subida pronunciada", "Desvío por obras"],
+    "correcta": 1,
+    "explicacion": "Advierte una pendiente ascendente pronunciada."
+  },
+  {
+    "id": "s28",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-10(a).svg",
+    "opciones": ["Calzada se ensancha", "Calzada se angosta a ambos lados", "Puente angosto"],
+    "correcta": 1,
+    "explicacion": "La calzada reduce su ancho desde ambos márgenes."
+  },
+  {
+    "id": "s29",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-10(b).svg",
+    "opciones": ["Angostamiento por izquierda", "Angostamiento por derecha", "Sólo carril derecho"],
+    "correcta": 1,
+    "explicacion": "La reducción de ancho ocurre sobre la margen derecha."
+  },
+  {
+    "id": "s30",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-10(c).svg",
+    "opciones": [ "Angostamiento por derecha", "Incorporación por la derecha","Angostamiento por izquierda"],
+    "correcta": 2,
+    "explicacion": "La reducción de ancho ocurre sobre la margen izquierda."
+  },
+  {
+    "id": "s31",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-12.svg",
+    "opciones": ["Pavimento resbaladizo", "Grava suelta", "Lluvia intensa"],
+    "correcta": 0,
+    "explicacion": "Advierte riesgo de pérdida de adherencia."
+  },
+  {
+    "id": "s32",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-13.svg",
+    "opciones": ["Calzada con piedras sueltas", "Zona de derrumbes", "Camino en reparación"],
+    "correcta": 0,
+    "explicacion": "Posible proyección de piedras por los neumáticos."
+  },
+  {
+    "id": "s33",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-14.svg",
+    "opciones": ["Piedras sueltas", "Derrumbe", "Bache pronunciado"],
+    "correcta": 1,
+    "explicacion": "Posibles deslizamientos del talud o caída de rocas."
+  },
+  {
+    "id": "s34",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-15.svg",
+    "opciones": ["Túnel", "Puente levadizo", "Paso estrecho"],
+    "correcta": 0,
+    "explicacion": "Indica proximidad de túnel."
+  },
+  {
+    "id": "s35",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-16.svg",
+    "opciones": ["Puente angosto", "Calzada se angosta", "Vado"],
+    "correcta": 0,
+    "explicacion": "Ancho reducido sobre el puente."
+  },
+  {
+    "id": "s36",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-17.svg",
+    "opciones": [ "Vado", "Ferry obligatorio","Puente móvil"],
+    "correcta": 2,
+    "explicacion": "Puente móvil o levadizo: pueden abrirse sus hojas."
+  },
+  {
+    "id": "s37",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-22(a).svg",
+    "opciones": ["Pasar por la derecha de la isleta", "Giro en U obligatorio", "Fin de doble calzada"],
+    "correcta": 0,
+    "explicacion": "Paso obligado por la derecha para franquear un obstáculo central."
+  },
+  {
+    "id": "s38",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_R-22(b).svg",
+    "opciones": ["Pasar por la izquierda del obstáculo", "Desvío a la izquierda obligatorio", "Cruce ferroviario"],
+    "correcta": 0,
+    "explicacion": "Paso obligado por la izquierda para franquear un obstáculo."
+  },
+  {
+    "id": "s39",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-21.svg",
+    "opciones": ["Rotonda próxima", "Rotonda obligatoria (reglamentaria)", "Giro en U permitido"],
+    "correcta": 0,
+    "explicacion": "Señal preventiva de intersección giratoria (rotonda) próxima."
+  },
+  {
+    "id": "s40",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-22.svg",
+    "opciones": [ "Carril exclusivo a la derecha", "Fin de carril derecho","Incorporación de tránsito por la derecha"],
+    "correcta": 2,
+    "explicacion": "Tránsito que se incorpora desde la derecha a la vía principal."
+  },
+  {
+    "id": "s41",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-23.svg",
+    "opciones": ["Doble mano", "Sólo mano única", "Preferencia sentido contrario"],
+    "correcta": 0,
+    "explicacion": "Circulación en ambos sentidos (doble mano)."
+  },
+  {
+    "id": "s42",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-24(a).svg",
+    "opciones": ["Cruce con prioridad de paso", "Intersección en cruz", "Glorieta"],
+    "correcta": 1,
+    "explicacion": "Advierte una intersección en cruz próxima."
+  },
+  {
+    "id": "s43",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-24(b).svg",
+    "opciones": ["Ingreso lateral por derecha", "Giro obligatorio a la derecha", "Estrechamiento por derecha"],
+    "correcta": 0,
+    "explicacion": "Se suma una vía por la derecha a la calzada principal."
+  },
+  {
+    "id": "s44",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-24(c).svg",
+    "opciones": ["Bifurcación en Y", "Intersección en T", "Glorieta"],
+    "correcta": 0,
+    "explicacion": "Separación de la calzada en dos ramas (bifurcación en Y)."
+  },
+  {
+    "id": "s45",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-25(b).svg",
+    "opciones": [ "Cruce peatonal exclusivo", "Prohibido peatones","Zona escolar/niños"],
+    "correcta": 2,
+    "explicacion": "Zona con presencia de niños; extremar precaución."
+  },
+  {
+    "id": "s46",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-26(a).svg",
+    "opciones": ["Ciclistas en la vía", "Ciclovía obligatoria", "Prohibido bicicletas"],
+    "correcta": 0,
+    "explicacion": "Posible cruce o presencia de ciclistas."
+  },
+  {
+    "id": "s47",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-27(a).svg",
+    "opciones": ["Animales sueltos (bovinos)", "Reserva natural", "Zona rural sin tránsito"],
+    "correcta": 0,
+    "explicacion": "Posible cruce o presencia de ganado mayor."
+  },
+  {
+    "id": "s48",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-27(b).svg",
+    "opciones": ["Animales silvestres (ciervos)", "Coto de caza", "Zoológico cercano"],
+    "correcta": 0,
+    "explicacion": "Posible cruce de fauna silvestre (ciervos)."
+  },
+  {
+    "id": "s49",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-30.svg",
+    "opciones": ["Vientos fuertes laterales", "Túnel", "Zona de derrumbes"],
+    "correcta": 0,
+    "explicacion": "Precaución por ráfagas laterales (viento)."
+  },
+  {
+    "id": "s50",
+    "texto": "¿Qué indica esta señal?",
+    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina_MSV_2017_road_sign_P-32.svg",
+    "opciones": ["Cruce ferroviario", "Intersección sin prioridad","Semáforo próximo"],
+    "correcta": 2,
+    "explicacion": "Advierte la presencia de semáforos más adelante."
+  }
+]
